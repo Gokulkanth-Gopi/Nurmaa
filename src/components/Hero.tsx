@@ -5,34 +5,33 @@ import { ArrowRight, ChevronLeft, ChevronRight, Heart, ShoppingBag } from "lucid
 import { useNavigate } from "react-router-dom";
 import Preloader from "./Preloader";
 
-import logo from '@/assets/images/ban1.jpg';
-import bg2 from '@/assets/images/ban2.png';
-import bg3 from '@/assets/images/ban1.png';
-
+import heroSkincareBanner from '@/assets/images/banner1.png';
+import heroFoodBanner from '@/assets/images/banner2.png';
+import ban2 from '@/assets/images/banner3.png';
 
 const slides = [
 	{
 		id: 1,
 		title: "Nurtured by Nature",
-		description: "Discover ethically sourced, handcrafted products rooted in tradition and crafted with care.",
-		image: logo,
-		color: "#67246A",
+		description: "Discover ethically sourced, handcrafted Ayurvedic skincare and wellness products crafted with pure care.",
+		image: heroSkincareBanner,
+		// color: "#67246A",
 		buttonVariant: "default"
 	},
 	{
 		id: 2,
 		title: "Pure, Simple, Organic",
-		description: "We bring you nature's best—no chemicals, no compromises. Just purity in every drop.",
-		image: bg2,
-		color: "#121769",
+		description: "Wholesome sprouted millets, ancient grains, and traditional nutrition—no chemicals, no compromises.",
+		image: heroFoodBanner,
+		// color: "#121769",
 		buttonVariant: "secondary"
 	},
 	{
 		id: 3,
 		title: "Crafted with Purpose",
-		description: "Every product tells a story—of farmers, artisans, and traditions passed through generations.",
-		image: bg3,
-		color: "#FE49AF",
+		description: "Every product tells a story—of traditional farmers, herbal artisans, and wellness passed through generations.",
+		image: ban2,
+		// color: "#FE49AF",
 		buttonVariant: "destructive"
 	},
 ];
@@ -159,17 +158,17 @@ const Hero = () => {
 					<img
 						src={slides[currentSlide].image}
 						alt="Slide Background"
-						className="absolute inset-0 w-full h-full object-cover"
-						style={{
-							filter: "brightness(0.7) contrast(1.1)",
-							mixBlendMode: "multiply"
-						}}
+						className="absolute inset-0 w-full h-full object-cover object-right md:object-center"
+					/>
+					{/* Gradient overlay for text contrast on left while keeping products vibrant on right */}
+					<div 
+						className="absolute inset-0 bg-gradient-to-r from-[#121769]/85 via-[#121769]/50 to-transparent sm:from-[#121769]/80 sm:via-[#121769]/35 sm:to-transparent"
 					/>
 					<div 
 						className="absolute inset-0"
 						style={{ 
 							backgroundColor: slides[currentSlide].color,
-							opacity: 0.3,
+							opacity: 0.15,
 							mixBlendMode: "overlay"
 						}}
 					/>
