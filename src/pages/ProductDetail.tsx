@@ -806,13 +806,14 @@ const ProductDetail: React.FC = () => {
                   className="block group"
                 >
                   <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                      <div className="relative overflow-hidden">
+                      <div className="relative aspect-square w-full bg-white overflow-hidden">
                       <LazyImage
                         src={relatedProduct.image}
                         alt={relatedProduct.name}
-                        className="w-full h-64 object-cover"
+                        fit="cover"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                         width="100%"
-                        height={256}
+                        height="100%"
                       />
                       {relatedProduct.featured && (
                         <span className="absolute top-2 right-2 bg-[#FE49AF] text-white text-xs font-bold px-2 py-1 rounded">

@@ -4,6 +4,7 @@ import { toast } from '@/hooks/use-toast';
 // Not using next/head in this SPA
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 
 // helper to render icons without passing className props (avoids IconBaseProps mismatch)
 const IconWrapper: React.FC<{ Comp: any; color?: string; size?: number; className?: string }> = ({ Comp, color, size = 20, className = '' }) => (
@@ -85,11 +86,11 @@ const Contact: React.FC = () => {
     },
     {
       question: "Do you offer phone support?",
-      answer: "Yes! Our phone support is available from 9AM to 5PM EST. You can reach us at +1 (555) 123-4567."
+      answer: "Yes! Our phone support is available from 9AM to 5PM EST. You can reach us at +91 8870261911."
     },
     {
       question: "Where are you located?",
-      answer: "Our headquarters are located at 123 Business Avenue, Suite 456, New York, NY 10001. We also have remote teams across multiple time zones."
+      answer: "Our headquarters are located at Nurmaa, Salem, TamilNadu - 636017. We also have remote teams across multiple time zones."
     },
     {
       question: "Can I schedule a meeting with your team?",
@@ -280,8 +281,19 @@ const Contact: React.FC = () => {
                       </div>
                       <div className="ml-4">
                         <h3 className="text-lg font-medium text-[#67246a]">Phone</h3>
-                        <a href="tel:+918870261911" className="text-[#121769]">+91 8870261911</a>
+                        <a href="tel:+918870261911" className="text-[#121769] hover:underline">+91 8870261911</a>
                         <p className="text-[#67246a]">Mon-Fri: 9AM-5PM EST</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start">
+                      <div className="flex-shrink-0 bg-[#ebebd3] rounded-lg p-3">
+                        <IconWrapper Comp={FaWhatsapp} color="#25D366" size={20} />
+                      </div>
+                      <div className="ml-4">
+                        <h3 className="text-lg font-medium text-[#67246a]">WhatsApp</h3>
+                        <a href="https://wa.me/918870261911" target="_blank" rel="noopener noreferrer" className="text-[#121769] hover:underline">+91 8870261911</a>
+                        <p className="text-[#67246a]">Instant orders & support</p>
                       </div>
                     </div>
 
@@ -291,8 +303,8 @@ const Contact: React.FC = () => {
                       </div>
                       <div className="ml-4">
                         <h3 className="text-lg font-medium text-[#67246a]">Address</h3>
-                        <p className="text-[#121769]">123 Business Avenue</p>
-                        <p className="text-[#121769]">Suite 456, New York, NY 10001</p>
+                        <p className="text-[#121769]">Nurmaa, Salem,</p>
+                        <p className="text-[#121769]">TamilNadu - 636017</p>
                       </div>
                     </div>
                   </div>

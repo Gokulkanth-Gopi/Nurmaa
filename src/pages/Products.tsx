@@ -4,6 +4,7 @@ import { useSearchParams } from 'react-router-dom';
 // code-split heavy UI pieces
 const ProductCard = lazy(() => import('@/components/ProductCard'));
 const QuickPurchaseModal = lazy(() => import('@/components/QuickPurchaseModal'));
+import LazyImage from '@/components/LazyImage';
 import { Product as BaseProduct, ProductCategory } from '@/lib/types';
 
 type Product = BaseProduct & { 
@@ -606,13 +607,14 @@ const Products: React.FC = () => {
                       className="flex flex-col sm:flex-row bg-white rounded-lg shadow-lg overflow-hidden border border-[#EBEBD3] hover:shadow-xl transition-shadow duration-200"
                     >
                       {/* Image on left for list view */}
-                      <div className="sm:w-1/3 w-full flex-shrink-0 flex items-center justify-center bg-[#f8f9f0] p-4 sm:p-6">
-                        <img
+                      <div className="sm:w-1/3 w-full h-56 sm:h-auto min-h-[180px] flex-shrink-0 relative overflow-hidden bg-white border-b sm:border-b-0 sm:border-r border-[#EBEBD3]">
+                        <LazyImage
                           src={product.image}
                           alt={product.name}
-                          loading="lazy"
-                          decoding="async"
-                          className="object-contain rounded-lg max-h-40 sm:max-h-48 w-full sm:w-40 md:w-48 lg:w-56 xl:w-64"
+                          fit="cover"
+                          width="100%"
+                          height="100%"
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                         />
                       </div>
                       {/* Details on right */}

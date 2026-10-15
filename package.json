@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "serve -s . -l 5000",
+    "start": "node app.js",
     "test": "vitest"
   },
   "dependencies": {

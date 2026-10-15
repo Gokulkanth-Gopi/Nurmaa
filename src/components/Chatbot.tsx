@@ -163,7 +163,7 @@ async function fetchBotResponse(userInput) {
       text: 'Sola Paniyaram Mix: Made from sorghum, urad dal. Gluten-free, high protein. Price: ₹145 (250gm). Makes soft, fluffy paniyarams.'
     };
   }
-  
+
   if (lower.includes('millet payiru adai')) {
     return {
       text: 'Millet Payiru Adai Mix: Protein-packed with millets and lentils. Price: ₹160 (250gm). Makes spicy, nutritious adais.'
@@ -364,7 +364,7 @@ async function fetchBotResponse(userInput) {
   }
   if (lower.includes('service') || lower.includes('customer support')) {
     return {
-      text: 'We offer fast customer support via chat, WhatsApp, and email. For help, just ask here or contact us at diyweboffi@gmail.com or call 8870261911.'
+      text: 'We offer fast customer support via chat, WhatsApp, and email. For help, just ask here or contact us at call +91 8870261911.'
     };
   }
   if (lower.includes('shipping') || lower.includes('delivery')) {
@@ -394,17 +394,17 @@ async function fetchBotResponse(userInput) {
   }
   if (lower.includes('contact') || lower.includes('reach')) {
     return {
-      text: 'You can contact us via this chat, WhatsApp, or email diyweboffi@gmail.com. Our support number is 8870261911.'
+      text: 'You can contact us via this chat, WhatsApp, or email support@nurmaa.com. Our support number is +91 8870261911.'
     };
   }
   if (lower.includes('whatsapp')) {
     return {
-      text: 'You can reach us on WhatsApp for quick support and order updates at 8870261911.'
+      text: 'You can reach us on WhatsApp for quick support and order updates at +91 8870261911.'
     };
   }
   if (lower.includes('location') || lower.includes('where are you')) {
     return {
-      text: 'We are based in Chennai, India, and ship our products all over the country.'
+      text: 'We are based in Nurmaa, Salem, TamilNadu - 636017, and ship our products all over the country.'
     };
   }
   if (lower.includes('subscribe') || lower.includes('newsletter')) {
@@ -480,18 +480,18 @@ export default function Chatbot() {
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    
+
     // Check if mobile view
     const checkIfMobile = () => {
       setIsMobile(window.innerWidth <= 768); // 768px is common breakpoint for mobile
     };
-    
+
     // Initial check
     checkIfMobile();
-    
+
     // Add event listener for window resize
     window.addEventListener('resize', checkIfMobile);
-    
+
     // Cleanup
     return () => window.removeEventListener('resize', checkIfMobile);
   }, [messages, open]);

@@ -33,19 +33,19 @@ const ProductCard: React.FC<{ product: Product; onQuickPurchase?: (product: Prod
         className="h-full flex flex-col bg-[#EBEBD3] rounded-xl overflow-hidden shadow-sm transition-all duration-300 border-2 border-[#121769]/10 group-hover:-translate-y-1 group-hover:shadow-lg"
         style={{ background: '#EBEBD3' }}
       >
-        {/* Layered image composition */}
-        <div className="relative aspect-square bg-white overflow-hidden">
+        {/* Product image container - fully covered edge to edge */}
+        <div className="relative aspect-square w-full bg-white rounded-t-xl overflow-hidden">
           {/* Badges */}
-          <div className="absolute top-3 left-3 right-3 flex justify-between z-30">
-            {product.featured && (
-              <span className="bg-[#FE49AF] text-white text-xs px-3 py-1 rounded-full font-bold shadow-sm">
+          <div className="absolute top-3 left-3 right-3 flex justify-between items-center z-30 pointer-events-none">
+            {product.featured ? (
+              <span className="bg-[#FE49AF] text-white text-xs px-3 py-1 rounded-full font-bold shadow-md">
                 Featured
               </span>
-            )}
-            <span className={`flex items-center gap-1 text-xs px-3 py-1 rounded-full font-medium ${
+            ) : <span />}
+            <span className={`flex items-center gap-1 text-xs px-3 py-1 rounded-full font-medium shadow-md backdrop-blur-md ${
               product.category === "skincare" 
-                ? "bg-[#121769]/10 text-[#121769]" 
-                : "bg-[#67246A]/10 text-[#67246A]"
+                ? "bg-white/90 text-[#121769]" 
+                : "bg-white/90 text-[#67246A]"
             }`}>
               {product.category === "skincare" ? (
                 <>
@@ -61,23 +61,17 @@ const ProductCard: React.FC<{ product: Product; onQuickPurchase?: (product: Prod
             </span>
           </div>
 
-          {/* Main product image container */}
-          <div className="relative z-10 w-full h-full flex items-center justify-center">
-            {/* Background image removed to disable hover animations */}
-
-            {/* Main product image */}
-            <div className="relative z-10 w-full h-full">
-              <div style={{ width: '100%', height: '100%' }} className="overflow-hidden">
-                <LazyImage src={product.image} alt={product.name} fit="cover" className="transition-transform duration-300 ease-out group-hover:scale-105" />
-              </div>
-            </div>
-
-            {/* Foreground image (emerges from behind the main image) */}
-          {/* Foreground image removed to disable hover animations */}
+          {/* Main product image - fully covering the area */}
+          <div className="w-full h-full overflow-hidden">
+            <LazyImage 
+              src={product.image} 
+              alt={product.name} 
+              fit="cover" 
+              width="100%" 
+              height="100%" 
+              className="w-full h-full object-cover transition-transform duration-300 ease-out group-hover:scale-105" 
+            />
           </div>
-
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 z-5" />
         </div>
         
         {/* Product info */}

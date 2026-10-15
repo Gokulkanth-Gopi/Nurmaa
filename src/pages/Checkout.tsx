@@ -5,7 +5,7 @@ import { toast } from '@/hooks/use-toast';
 import Chatbot from '@/components/Chatbot';
 import LazyImage from '@/components/LazyImage';
 
-const WHATSAPP_NUMBER = '918667212177';
+const WHATSAPP_NUMBER = '918870261911';
 
 const Checkout: React.FC = () => {
   const { items, totalPrice, clearCart } = useCart();
@@ -196,8 +196,8 @@ const Checkout: React.FC = () => {
             <div className="p-6 rounded-2xl bg-[#FE49AF]/10 border border-[#FE49AF]/20">
               <h3 className="text-[#121769] font-semibold mb-2">Order Information</h3>
               <p className="text-sm text-[#67246A]">
-                A confirmation email will be sent to 
-                <span className="font-medium text-[#FE49AF]"> diyweboffi@gmail.com</span>.<br />
+                A confirmation email will be sent to
+                <span className="font-medium text-[#FE49AF]"> support@nurmaa.com</span>.<br />
                 We will contact you soon to confirm delivery.
               </p>
               <div className="mt-4 p-3 bg-white border border-dashed rounded-lg text-sm italic text-[#67246A]">
