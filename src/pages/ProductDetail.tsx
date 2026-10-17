@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
 // Carousel removed: rendering single image with hover effect instead
 import LazyImage from '@/components/LazyImage';
+import { resolveProductImage } from '@/lib/productImages';
 
 // Extend Product type locally to include all used properties
 type ProductCategory = 'skincare' | 'food';
@@ -480,6 +481,8 @@ const products: (Product & { formattedPrice: string })[] = [
 
 ].map(product => ({
   ...product,
+  image: resolveProductImage(product.image),
+  images: product.images ? product.images.map(img => resolveProductImage(img)) : [resolveProductImage(product.image)],
   formattedPrice: formatPrice(product.price),
   variants: product.variants?.map(v => ({
     quantity: v.quantity,

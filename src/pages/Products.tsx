@@ -6,6 +6,7 @@ const ProductCard = lazy(() => import('@/components/ProductCard'));
 const QuickPurchaseModal = lazy(() => import('@/components/QuickPurchaseModal'));
 import LazyImage from '@/components/LazyImage';
 import { Product as BaseProduct, ProductCategory } from '@/lib/types';
+import { resolveProductImage } from '@/lib/productImages';
 
 type Product = BaseProduct & { 
   formattedPrice: string;
@@ -369,6 +370,7 @@ const allProducts: Product[] = [
   }
 ].map(product => ({
   ...product,
+  image: resolveProductImage(product.image),
   formattedPrice: formatPrice(product.price)
 }));
 

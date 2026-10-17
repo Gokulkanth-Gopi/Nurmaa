@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { resolveProductImage } from '@/lib/productImages';
 
 const LazyImage: React.FC<{
   src: string;
@@ -8,6 +9,7 @@ const LazyImage: React.FC<{
   height?: number | string;
   fit?: 'cover' | 'contain';
 }> = ({ src, alt = '', className = '', width, height, fit = 'cover' }) => {
+  const resolvedSrc = resolveProductImage(src);
   const [loaded, setLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -20,7 +22,7 @@ const LazyImage: React.FC<{
         setLoaded(true);
       }
     }
-  }, [src]);
+  }, [resolvedSrc]);
 
   const fitClass = fit === 'contain' ? 'object-contain' : 'object-cover';
 
@@ -34,7 +36,7 @@ const LazyImage: React.FC<{
       )}
       <img
         ref={imgRef}
-        src={hasError ? '/placeholder.svg' : src}
+        src={hasError ? '/placeholder.svg' : resolvedSrc}
         alt={alt}
         loading="lazy"
         decoding="async"
