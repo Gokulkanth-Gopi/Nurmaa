@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
-import bg2 from '@/assets/images/bg2.png';
+import bg2 from '@/assets/images/productbanner.png';
 import { useSearchParams } from 'react-router-dom';
 // code-split heavy UI pieces
 const ProductCard = lazy(() => import('@/components/ProductCard'));

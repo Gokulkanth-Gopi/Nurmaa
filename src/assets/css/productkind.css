@@ -504,40 +504,54 @@ body {
 
 @media (max-width: 480px) {
   .slider-wrapper {
-    padding: 1rem;
+    padding: 2rem 0.5rem;
+    min-height: auto;
+  }
+  
+  .slider-container {
+    padding: 1rem 0;
+  }
+
+  .slider {
+    padding: 15px 10px;
+    gap: 16px;
   }
   
   .slider-header {
-
     font-size: 1.8rem;
-
-    font-size: 1.1rem;
     margin-bottom: 0.5rem;
   }
   
   .slider-subheader {
-    font-size: 0.9rem;
-    padding: 0.2rem 0.5rem;
-
+    font-size: 0.95rem;
+    padding: 0.2rem 1rem;
   }
   
-  
   .product-container {
-    width: 360px;
-    height: 480px;
+    width: min(85vw, 320px);
+    height: 440px;
+  }
+  
+  .product-card {
+    padding: 1.25rem 0.75rem;
+  }
+  
+  .product-image-wrapper {
+    height: 65%;
+    margin-bottom: 1rem;
   }
   
   .product-main-image {
-    width: 260px;
-    height: 320px;
+    width: min(68vw, 220px);
+    height: 260px;
   }
   
   .product-name {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
   }
   
   .product-description {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 

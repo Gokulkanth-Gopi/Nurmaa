@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // removed next/head import (not a Next.js app)
 import { motion, AnimatePresence } from 'framer-motion';
 import client from '@/assets/images/client.png';
+import testimonialBanner from '@/assets/images/testimonial.png';
 
 const Testimonials: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('all');
@@ -118,14 +119,23 @@ const Testimonials: React.FC = () => {
       })()}
 
       <div className="min-h-screen bg-gradient-to-b from-[#EBEBD3] to-white">
-        {/* Enhanced Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-[#67246a] via-[#FE49AF] to-[#121769] py-20 sm:py-28 px-2 sm:px-0 testimonials-hero-mobile-mt">
-          {/* Animated gradient mesh background */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0 bg-[url('/images/gradient-mesh.png')] bg-cover bg-center mix-blend-overlay"></div>
-            <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-[#FE49AF] mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#67246a] mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div className="absolute bottom-0 left-1/2 w-64 h-64 rounded-full bg-[#121769] mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
+        {/* Enhanced Hero Section with Testimonial Banner Background */}
+        <section className="relative overflow-hidden py-24 sm:py-32 px-4 sm:px-6 testimonials-hero-mobile-mt bg-[#121769]">
+          {/* Testimonial Banner Background Image */}
+          <div 
+            className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat z-0"
+            style={{
+              backgroundImage: `url(${testimonialBanner})`,
+            }}
+          />
+          {/* Gradient Overlay for Brand Harmony & Text Legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#121769]/85 via-[#67246a]/75 to-[#121769]/85 z-0" />
+          
+          {/* Ambient Lighting Accents */}
+          <div className="absolute inset-0 opacity-30 pointer-events-none z-0">
+            <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-[#FE49AF] mix-blend-screen filter blur-3xl opacity-70 animate-blob"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[#67246a] mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            <div className="absolute bottom-0 left-1/2 w-64 h-64 rounded-full bg-[#121769] mix-blend-screen filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
           </div>
           
           <div className="relative z-10 max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
@@ -213,7 +223,7 @@ const Testimonials: React.FC = () => {
 
               {/* Enhanced Testimonial Cards */}
               <div 
-                className="relative h-[420px] xs:h-[480px] sm:h-[500px] md:h-[400px]"
+                className="relative h-[560px] xs:h-[520px] sm:h-[480px] md:h-[400px]"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
               >
@@ -281,21 +291,15 @@ const Testimonials: React.FC = () => {
                           >
                             <div className="relative group">
                               <div className="w-32 h-32 xs:w-40 xs:h-40 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-2xl relative">
-                                {testimonial.image === client ? (
-                                  // Show imported client.png for id:1
-                                  <img
-                                    src={client}
-                                    alt={testimonial.name}
-                                    className="w-full h-full object-cover"
-                                  />
-                                ) : (
-                                  // Show string image path for others
-                                  <img
-                                    src={testimonial.image}
-                                    alt={testimonial.name}
-                                    className="w-full h-full object-cover"
-                                  />
-                                )}
+                                <img
+                                  src={testimonial.image || client}
+                                  alt={testimonial.name}
+                                  onError={(e) => {
+                                    e.currentTarget.onerror = null;
+                                    e.currentTarget.src = client;
+                                  }}
+                                  className="w-full h-full object-cover"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                               </div>
                               <div className="absolute -bottom-4 -right-4 xs:-bottom-6 xs:-right-6 bg-gradient-to-r from-[#FE49AF] to-[#67246a] text-white px-3 xs:px-4 py-1 xs:py-2 rounded-full shadow-lg group-hover:scale-105 transition-transform duration-300 text-xs xs:text-sm">

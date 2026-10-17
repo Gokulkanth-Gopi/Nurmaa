@@ -188,7 +188,7 @@ const TestimonialsGrid = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
@@ -223,7 +223,7 @@ const TestimonialsGrid = () => {
           ))}
         </div>
 
-        <div className="relative h-64 md:h-72 lg:h-80">
+        <div className="relative min-h-[300px] sm:min-h-[270px] md:h-72 lg:h-80">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}

@@ -9,13 +9,22 @@ import heroSkincareBanner from '@/assets/images/banner1.png';
 import heroFoodBanner from '@/assets/images/banner2.png';
 import ban2 from '@/assets/images/banner3.png';
 
-const slides = [
+interface Slide {
+	id: number;
+	title: string;
+	description: string;
+	image: string;
+	color: string;
+	buttonVariant: string;
+}
+
+const slides: Slide[] = [
 	{
 		id: 1,
 		title: "Nurtured by Nature",
 		description: "Discover ethically sourced, handcrafted Ayurvedic skincare and wellness products crafted with pure care.",
 		image: heroSkincareBanner,
-		// color: "#67246A",
+		color: "#67246A",
 		buttonVariant: "default"
 	},
 	{
@@ -23,7 +32,7 @@ const slides = [
 		title: "Pure, Simple, Organic",
 		description: "Wholesome sprouted millets, ancient grains, and traditional nutrition—no chemicals, no compromises.",
 		image: heroFoodBanner,
-		// color: "#121769",
+		color: "#121769",
 		buttonVariant: "secondary"
 	},
 	{
@@ -31,7 +40,7 @@ const slides = [
 		title: "Crafted with Purpose",
 		description: "Every product tells a story—of traditional farmers, herbal artisans, and wellness passed through generations.",
 		image: ban2,
-		// color: "#FE49AF",
+		color: "#FE49AF",
 		buttonVariant: "destructive"
 	},
 ];

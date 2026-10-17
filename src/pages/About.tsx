@@ -1,7 +1,8 @@
 import React from 'react';
 import ban1 from '@/assets/images/ban1.jpg';
-import bg2 from '@/assets/images/bg2.png';
-import bg3 from '@/assets/images/bg3.png';
+import visionImg from '@/assets/images/vision.jpg';
+import missionImg from '@/assets/images/mission.jpg';
+import founderImg from '@/assets/images/founder.jpg';
 import { motion } from 'framer-motion';
 // import Timeline from '../components/Timeline';
 
@@ -55,7 +56,7 @@ const About: React.FC = () => {
       backgroundImage: `url(${ban1})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.18,
+            opacity: 0.6,
             pointerEvents: 'none'
           }}
         ></div>
@@ -120,11 +121,11 @@ const About: React.FC = () => {
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center z-10 p-4 md:p-8">
-              <div className="aspect-w-16 aspect-h-9 w-full">
+              <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden rounded-2xl shadow-lg border-4 border-[#FE49AF]/20">
                 <img
-                  src={bg2}
-                  alt="Vision"
-                  className="rounded-2xl w-full h-full object-cover shadow-lg border-4 border-[#FE49AF]/20"
+                  src={visionImg}
+                  alt="Our Vision - Holistic Natural Wellness"
+                  className="rounded-2xl w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
             </div>
@@ -146,11 +147,11 @@ const About: React.FC = () => {
               </p>
             </div>
             <div className="flex-1 flex items-center justify-center z-10 p-4 md:p-8">
-              <div className="aspect-w-16 aspect-h-9 w-full">
+              <div className="aspect-w-16 aspect-h-9 w-full overflow-hidden rounded-2xl shadow-lg border-4 border-[#67246a]/20">
                 <img
-                  src={bg3}
-                  alt="Handmade products"
-                  className="rounded-2xl w-full h-full object-cover shadow-lg border-4 border-[#67246a]/20"
+                  src={missionImg}
+                  alt="Our Mission - Handcrafted Pure Botanical Products"
+                  className="rounded-2xl w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                 />
               </div>
             </div>
@@ -173,11 +174,11 @@ const About: React.FC = () => {
             <div className="absolute -bottom-10 -left-10 w-56 h-56 bg-[#67246a]/10 rounded-full blur-2xl z-0"></div>
             {/* Founder Image */}
             <div className="relative flex-shrink-0 flex justify-center items-center w-full md:w-1/3 z-10 py-4 md:py-0">
-              <div className="w-40 h-40 sm:w-52 sm:h-52">
+              <div className="w-48 h-48 sm:w-60 sm:h-60 rounded-2xl overflow-hidden border-4 border-[#FE49AF]/30 shadow-xl">
                 <img
-                  src={ban1}
-                  alt="Founder"
-                  className="rounded-2xl w-full h-full object-cover border-4 border-[#FE49AF]/30 shadow-xl"
+                  src={founderImg}
+                  alt="Amina Rahman - Founder & Herbal Scientist"
+                  className="rounded-2xl w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
                 />
               </div>
             </div>
