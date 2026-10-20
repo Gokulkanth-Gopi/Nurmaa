@@ -5,7 +5,7 @@ const ProductCard = lazy(() => import('@/components/ProductCard'));
 import { Product } from '@/lib/types';
 import { motion, useInView } from 'framer-motion';
 import { FaFire } from 'react-icons/fa';
-import bg1 from '@/assets/images/fg3.png';
+import bg1 from '@/assets/images/feature.png';
 import bg2 from '@/assets/images/bg2.png';
 import bg3 from '@/assets/images/bg3.png';
 // product images as imports for bundler optimization

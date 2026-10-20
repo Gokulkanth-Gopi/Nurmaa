@@ -1,5 +1,5 @@
 import React from 'react';
-import ban1 from '@/assets/images/ban1.jpg';
+import ban1 from '@/assets/images/about.png';
 import visionImg from '@/assets/images/vision.jpg';
 import missionImg from '@/assets/images/mission.jpg';
 import founderImg from '@/assets/images/founder.jpg';
@@ -56,7 +56,7 @@ const About: React.FC = () => {
       backgroundImage: `url(${ban1})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            opacity: 0.6,
+            opacity: 0.35,
             pointerEvents: 'none'
           }}
         ></div>
@@ -79,14 +79,14 @@ const About: React.FC = () => {
               custom={3}
             ></motion.div>
             <motion.p
-              className="text-sm sm:text-base md:text-lg lg:text-xl text-[#121769] font-medium mb-2 sm:mb-4"
+              className="text-sm sm:text-base md:text-lg lg:text-xl text-[#121769] font-bold mb-2 sm:mb-4 drop-shadow"
               variants={fadeInUp}
               custom={4}
             >
               Ancient wisdom. Modern wellness. Crafted with care.
             </motion.p>
             <motion.p
-              className="text-xs sm:text-sm md:text-base lg:text-lg text-[#67246a] max-w-2xl mx-auto"
+              className="text-xs sm:text-sm md:text-base lg:text-lg text-[#121769] max-w-2xl mx-auto font-medium"
               variants={fadeInUp}
               custom={5}
             >
